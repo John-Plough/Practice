@@ -20,7 +20,7 @@ function calculateMonthlyOrders(arr) {
 }
 
 //7.5 mins
-//mistakes - used "of" instead of "in", line 14
+//mistakes - used "of" instead of "in" on line 14
 
 //Rithm solution
 function calculateMonthlyOrders(orders) {
