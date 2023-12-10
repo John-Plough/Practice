@@ -9,7 +9,7 @@
 // };
 
 // loop over obj
-//   if val there includes num
+//   if val in prop includes num
 //     increment arraysWithThisNumber
 // return arraysWithThisNumber
 
