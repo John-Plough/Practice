@@ -21,3 +21,14 @@ function calculateMonthlyOrders(arr) {
 
 //7.5 mins
 //mistakes - used "of" instead of "in", line 14
+
+//Rithm solution
+function calculateMonthlyOrders(orders) {
+  let total = 0;
+  for (let order of orders) {
+    for (let key in order) {
+      total += order[key];
+    }
+  }
+  return total;
+}
