@@ -40,14 +40,15 @@ function divideObject(obj) {
 // 11.5 mins
 // Perfect!
 
-let sumNumbers = 0;
-let sumStrings = 0;
-for (let key in obj) {
-  if (typeof obj[key] === "string") {
-    sumStrings += obj[key].length;
-  } else {
-    sumNumbers += obj[key];
+function divideObject(obj) {
+  let sumNumbers = 0;
+  let sumStrings = 0;
+  for (let key in obj) {
+    if (typeof obj[key] === "string") {
+      sumStrings += obj[key].length;
+    } else {
+      sumNumbers += obj[key];
+    }
   }
-}
-return [[sumNumbers], [sumStrings]];
+  return [[sumNumbers], [sumStrings]];
 }
