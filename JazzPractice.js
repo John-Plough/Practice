@@ -1,45 +1,89 @@
-function sortStrings(string) {
-  let newArray = string.split(" ");
-  let counter = {};
-  let value = Infinity;
-  let tempArr = [];
+function solution(num) {
+  const roman = {                           // object of all numerals with their value
+    M: 1000,
+    CM: 900,
+    D: 500,
+    CD: 400,
+    C: 100,
+    XC: 90,
+    L: 50,
+    XL: 40,
+    X: 10,
+    IX: 9,
+    V: 5,
+    IV: 4,
+    I: 1,
+  };
 
-  for (let i = 0; i < newArray.length; i++) {
-    for (let j = 0; j < newArray[i].length; j++) {
-      let newVal = newArray[i];
-      let letterVal = newArray[i][j];
+  let numAsRomNum = "";                       //str that will be built up thru the for loop below
 
-      if (!isNaN(letterVal)) {
-        counter[newVal] = letterVal;
-      }
-    }
+  for (let key of Object.keys(roman)) {       //[V,I,X]
+                                              //loop thru array of the keys(numerals)
+    let quot = Math.floor(num / roman[key]);  //assign quotient = (input number / value)
+    numAsRomNum += key.repeat(quot);          //add numerals to str 'quot' times
+    num -= (quot * roman[key]);               //subtract (val * quot) from num
   }
 
-  console.log(counter);
-  let highestVal = Object.values(counter);
-  console.log(highestVal.sort());
-  let lastVal = highestVal[highestVal.length - 1];
-
-  for (let k = 1; k <= Number(lastVal); k++) {
-    for (let key in counter) {
-      let newVal = counter[key];
-      if (Number(newVal) === k) {
-        tempArr.push(key);
-      }
-    }
-  }
-
-  return tempArr.join(" ");
+  return numAsRomNum;
 }
 
-("Al1 7bud M6y ghu2hk sj9hkj s4hkk");
+//33 -- XXX
 
-// for (let key in counter) {
-//   let objectVal = counter[key];
-//   if (objectVal < value) {
-//     value = objectVal;
-//     tempArr.unshift(key);
-//   } else {
-//     tempArr.push(key);
-//   }
-// }
+XXXIII -- 30
+3
+
+roman.keys()
+
+
+
+
+
+
+
+function arrayDiff(A, B) {
+
+  const finalArr = [];
+  for (let el of A) {
+    if (!B.includes(el)) {
+      finalArr.push(el);
+    }
+  }
+
+  return finalArr;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
