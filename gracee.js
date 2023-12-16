@@ -1,39 +1,38 @@
 /**
- * create obj
- * loop thru arr adding one to val of corresponding key
- * return obj
+ * create total var
+ * loop over obj1
+ *  if val is true for both obj, add one to total
+ * return total
  */
 
-function robotInstructions(arr) {
-  const obj = { U: 0, D: 0, L: 0, R: 0 };
+function scheduleCheck(obj1, obj2) {
+  let total = 0;
 
-  for (let move of arr) {
-    obj[move]++;
-  }
-
-  return obj;
-}
-
-function robotInstructions(arr) {
-  const totalMoves = {};
-  for (let move of arr) {
-    if (move in totalMoves) {
-      totalMoves[move]++;
-    } else {
-      totalMoves[move] = 1;
+  for (let day in obj1) {
+    if (obj1[day] === true && obj2[day] === true) {
+      total++;
     }
   }
-  return totalMoves;
+
+  return total;
 }
 
-function robotInstructions(moves) {
-  let moveCount = {};
-  for (let move of moves) {
-    if (moveCount[move]) {
-      moveCount[move]++;
-    } else {
-      moveCount[move] = 1;
+function scheduleCheck(obj1, obj2) {
+  let totalDaysBothAreTrue = 0;
+  for (let day in obj1) {
+    if (obj1[day] === true && obj2[day] === true) {
+      totalDaysBothAreTrue++;
     }
   }
-  return moveCount;
+  return totalDaysBothAreTrue;
+}
+
+function scheduleCheck(schedule1, schedule2) {
+  let count = 0;
+  for (let key in schedule1) {
+    if (schedule1[key] === true && schedule2[key] === true) {
+      count++;
+    }
+  }
+  return count;
 }
