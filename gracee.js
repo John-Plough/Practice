@@ -1,32 +1,22 @@
-// output - Boolean
-//loop thru arrofarr
-// determine if val is included in that arr
-//   if yes, return true;
-//return false
+/**
+ * remove two els, starting at index,
+ * add hello world strs
+ * return altered arr
+ *
+ * start at index and remove two el, add 'hello' 'world'
+ */
 
-function inMatrix(arrOfArrs, val) {
-  for (let arr of arrOfArrs) {
-    if (arr.includes(val)) {
-      return true;
-    }
-  }
-  return false;
+function replaceAfter(arr, index) {
+  arr.splice(index, 2, "Hello", "world");
+  return arr;
 }
 
-function inMatrix(arr, val) {
-  for (innerArr of arr) {
-    if (innerArr.includes(val)) {
-      return true;
-    }
-  }
-  return false;
+function replaceAfter(arr, index) {
+  arr.splice(index, 2, "Hello", "world");
+  return arr;
 }
 
-function inMatrix(matrix, value) {
-  for (let i = 0; i < matrix.length; i++) {
-    if (matrix[i].indexOf(value) > -1) {
-      return true;
-    }
-  }
-  return false;
+function replaceAfter(array, idx) {
+  array.splice(idx, 2, "Hello", "world");
+  return array;
 }
