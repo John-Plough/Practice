@@ -1,38 +1,65 @@
 /**
- * create total var
- * loop over obj1
- *  if val is true for both obj, add one to total
- * return total
+ * create obj
+ *
+ * loop over arr
+ *  if word is python,
+ *    if exists, add
+ *    otherwise, create
+ *  if word is js,
+ *    if exists, add
+ *    otherwise, create
+ *  otherwise
+ *    push to obj.other
+ *
+ * returns obj
  */
 
-function scheduleCheck(obj1, obj2) {
-  let total = 0;
+function separateLanguages(arr) {
+  const languageCount = { python: 0, javascript: 0, other: [] };
 
-  for (let day in obj1) {
-    if (obj1[day] === true && obj2[day] === true) {
-      total++;
+  for (let language of arr) {
+    if (language === "python") {
+      languageCount.python++;
+    } else if (language === "javascript") {
+      languageCount.javascript++;
+    } else {
+      languageCount.other.push(language);
     }
   }
 
-  return total;
+  return languageCount;
 }
 
-function scheduleCheck(obj1, obj2) {
-  let totalDaysBothAreTrue = 0;
-  for (let day in obj1) {
-    if (obj1[day] === true && obj2[day] === true) {
-      totalDaysBothAreTrue++;
+function separateLanguages(arr) {
+  const langObj = { python: 0, javascript: 0, other: [] };
+
+  for (let lang of arr) {
+    if (lang === "python") {
+      langObj.python++;
+    } else if (lang === "javascript") {
+      langObj.javascript++;
+    } else {
+      langObj.other.push(lang);
     }
   }
-  return totalDaysBothAreTrue;
+
+  return langObj;
 }
 
-function scheduleCheck(schedule1, schedule2) {
-  let count = 0;
-  for (let key in schedule1) {
-    if (schedule1[key] === true && schedule2[key] === true) {
-      count++;
+function separateLanguages(languages) {
+  let result = {
+    python: 0,
+    javascript: 0,
+    other: [],
+  };
+  for (let language of languages) {
+    if (language === "python") {
+      result.python++;
+    } else if (language === "javascript") {
+      result.javascript++;
+    } else {
+      result.other.push(language);
     }
   }
-  return count;
+  return result;
 }
