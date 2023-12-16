@@ -1,64 +1,52 @@
 /**
- * create obj
+ * create vowel str
+ * loop over str
+ *    if char is vowel, skip it, plus next char
+ *    else add char to arr
  *
- * loop over arr
- *  if word is python,
- *    if exists, add
- *    otherwise, create
- *  if word is js,
- *    if exists, add
- *    otherwise, create
- *  otherwise
- *    push to obj.other
- *
- * returns obj
+ * returns arr
  */
 
-function separateLanguages(arr) {
-  const languageCount = { python: 0, javascript: 0, other: [] };
+function skipVowels(str) {
+  let vowels = "AEIOUaeiou";
+  const arr = [];
 
-  for (let language of arr) {
-    if (language === "python") {
-      languageCount.python++;
-    } else if (language === "javascript") {
-      languageCount.javascript++;
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (vowels.includes(char)) {
+      i++;
     } else {
-      languageCount.other.push(language);
+      arr.push(char);
     }
   }
 
-  return languageCount;
+  return arr;
 }
 
-function separateLanguages(arr) {
-  const langObj = { python: 0, javascript: 0, other: [] };
+function skipVowels(str) {
+  const withoutVowels = [];
+  let vowels = "aeiuoAEIOU";
 
-  for (let lang of arr) {
-    if (lang === "python") {
-      langObj.python++;
-    } else if (lang === "javascript") {
-      langObj.javascript++;
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (vowels.includes(char)) {
+      i++;
     } else {
-      langObj.other.push(lang);
+      withoutVowels.push(char);
     }
   }
 
-  return langObj;
+  return withoutVowels;
 }
 
-function separateLanguages(languages) {
-  let result = {
-    python: 0,
-    javascript: 0,
-    other: [],
-  };
-  for (let language of languages) {
-    if (language === "python") {
-      result.python++;
-    } else if (language === "javascript") {
-      result.javascript++;
+function skipVowels(string) {
+  let vowels = "aeiouAEIOU";
+  let result = [];
+  for (let i = 0; i < string.length; i++) {
+    if (vowels.includes(string[i])) {
+      i++;
     } else {
-      result.other.push(language);
+      result.push(string[i]);
     }
   }
   return result;
