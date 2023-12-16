@@ -1,48 +1,39 @@
 /**
- * loop thru arr
- *  if val is even, skip it and next two nums
- *  otherwise add to new arr
- * reverse new arr
- * return new arr
- *
- * [0,1,2,3,4,5,6,7,8,9]
+ * create obj
+ * loop thru arr adding one to val of corresponding key
+ * return obj
  */
-function reverseValues(arr) {
-  const newArr = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    let num = arr[i];
-    if (num % 2 === 0) {
-      i += 2;
-    } else {
-      newArr.push(num); //[3,7]
-    }
+function robotInstructions(arr) {
+  const obj = { U: 0, D: 0, L: 0, R: 0 };
+
+  for (let move of arr) {
+    obj[move]++;
   }
 
-  return newArr.reverse(); // --> [7,3]
+  return obj;
 }
 
-function reverseValues(arr) {
-  const nonSkipped = [];
-  for (i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 === 0) {
-      i += 2;
+function robotInstructions(arr) {
+  const totalMoves = {};
+  for (let move of arr) {
+    if (move in totalMoves) {
+      totalMoves[move]++;
     } else {
-      nonSkipped.push(arr[i]);
+      totalMoves[move] = 1;
     }
   }
-  const reversed = nonSkipped.reverse();
-  return reversed;
+  return totalMoves;
 }
 
-function reverseValues(arr) {
-  let result = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 === 1) {
-      result.unshift(arr[i]);
+function robotInstructions(moves) {
+  let moveCount = {};
+  for (let move of moves) {
+    if (moveCount[move]) {
+      moveCount[move]++;
     } else {
-      i += 2;
+      moveCount[move] = 1;
     }
   }
-  return result;
+  return moveCount;
 }
