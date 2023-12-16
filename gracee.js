@@ -1,22 +1,48 @@
 /**
- * remove two els, starting at index,
- * add hello world strs
- * return altered arr
+ * loop thru arr
+ *  if val is even, skip it and next two nums
+ *  otherwise add to new arr
+ * reverse new arr
+ * return new arr
  *
- * start at index and remove two el, add 'hello' 'world'
+ * [0,1,2,3,4,5,6,7,8,9]
  */
+function reverseValues(arr) {
+  const newArr = [];
 
-function replaceAfter(arr, index) {
-  arr.splice(index, 2, "Hello", "world");
-  return arr;
+  for (let i = 0; i < arr.length; i++) {
+    let num = arr[i];
+    if (num % 2 === 0) {
+      i += 2;
+    } else {
+      newArr.push(num); //[3,7]
+    }
+  }
+
+  return newArr.reverse(); // --> [7,3]
 }
 
-function replaceAfter(arr, index) {
-  arr.splice(index, 2, "Hello", "world");
-  return arr;
+function reverseValues(arr) {
+  const nonSkipped = [];
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      i += 2;
+    } else {
+      nonSkipped.push(arr[i]);
+    }
+  }
+  const reversed = nonSkipped.reverse();
+  return reversed;
 }
 
-function replaceAfter(array, idx) {
-  array.splice(idx, 2, "Hello", "world");
-  return array;
+function reverseValues(arr) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 1) {
+      result.unshift(arr[i]);
+    } else {
+      i += 2;
+    }
+  }
+  return result;
 }
